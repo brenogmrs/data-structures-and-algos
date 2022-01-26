@@ -26,17 +26,21 @@ def quadratic(my_list):
 
 # Combination
 
-
+# O(7) + O(2n) -> O(n)
 def combination(my_list):
+    # O(1)
     print(my_list[0])
 
+    # O(5)
     for i in range(5):
         print("test, ", i)
 
+    # O(n)
+    for i in my_list:
+        print(i)
+    # O(n)
     for i in my_list:
         print(i)
 
-    for i in my_list:
-        print(i)
-
+    # O(1)
     print("----python----")
