@@ -23,12 +23,38 @@ class UnorderedVector:
             self.last_position += 1
             self.values[self.last_position] = value
 
+    # O(n)
+    def linear_search(self, value):
+        if value in self.values:
+            for i in range(self.last_position + 1):
+                if value == self.values[i]:
+                    return i
+        else:
+            return -1
+
+    # O(n)
+    def remove(self, value):
+        index = self.linear_search(value)
+        if index != -1:
+            for i in range(index, self.last_position):
+                self.values[i] = self.values[i + 1]
+
+            self.last_position -= 1
+
+        return -1
+
 
 vector = UnorderedVector(5)
+
 vector.insert(3)
 vector.insert(5)
 vector.insert(8)
 vector.insert(1)
 vector.insert(7)
 
+vector.print_vector()
+print("item index", vector.linear_search(5))
+print("item index", vector.linear_search(15))
+
+vector.remove(7)
 vector.print_vector()
