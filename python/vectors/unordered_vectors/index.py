@@ -7,6 +7,7 @@ class UnorderedVector:
         self.last_position = -1
         self.values = np.empty(self.capability, dtype=int)
 
+    # O(n)
     def print_vector(self):
         if self.last_position == -1:
             print("The vector is empty")
