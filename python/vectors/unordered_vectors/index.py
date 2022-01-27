@@ -25,12 +25,11 @@ class UnorderedVector:
 
     # O(n)
     def linear_search(self, value):
-        if value in self.values:
-            for i in range(self.last_position + 1):
-                if value == self.values[i]:
-                    return i
-        else:
-            return -1
+        for i in range(self.last_position + 1):
+            if value == self.values[i]:
+                return i
+
+        return -1
 
     # O(n)
     def remove(self, value):
