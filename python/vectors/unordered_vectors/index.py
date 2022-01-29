@@ -12,8 +12,10 @@ class UnorderedVector:
         if self.last_position == -1:
             print("The vector is empty")
         else:
+            vector = []
             for i in range(self.last_position + 1):
-                print(i, "-", self.values[i])
+                vector.append(self.values[i])
+            print(vector)
 
     # O(1)
     def insert(self, value):
