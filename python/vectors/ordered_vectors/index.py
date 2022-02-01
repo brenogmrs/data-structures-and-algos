@@ -39,6 +39,16 @@ class OrderedVector:
         self.values[position] = value
         self.last_position += 1
 
+    # O(n)
+    def search(self, value):
+        for i in range(self.last_position + 1):
+            if self.values[i] > value:
+                return -1
+            if self.values[i] == value:
+                return i
+            if i == self.last_position:
+                return -1
+
 
 vector = OrderedVector(10)
 
@@ -51,5 +61,7 @@ vector.add(4)
 vector.add(2)
 vector.add(4)
 vector.add(5)
+
+print(vector.search(9))
 
 vector.print()
