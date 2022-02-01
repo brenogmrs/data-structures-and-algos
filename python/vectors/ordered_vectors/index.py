@@ -49,6 +49,17 @@ class OrderedVector:
             if i == self.last_position:
                 return -1
 
+    def remove(self, value):
+        position = self.search(value)
+
+        if position == -1:
+            return -1
+        else:
+            for i in range(position, self.last_position):
+                self.values[i] = self.values[i + 1]
+
+            self.last_position -= 1
+
 
 vector = OrderedVector(10)
 
@@ -56,12 +67,7 @@ vector.add(6)
 vector.add(4)
 vector.add(3)
 vector.add(5)
-vector.add(2)
-vector.add(4)
-vector.add(2)
-vector.add(4)
-vector.add(5)
 
-print(vector.search(9))
+vector.remove(4)
 
 vector.print()
