@@ -49,6 +49,9 @@ class OrderedVector:
             if i == self.last_position:
                 return -1
 
+    def binary_search(self, value):
+        pass
+
     def remove(self, value):
         position = self.search(value)
 
