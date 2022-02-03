@@ -86,6 +86,5 @@ vector.add(4)
 vector.add(3)
 vector.add(5)
 
-vector.remove(4)
-
+print(vector.binary_search(4))
 vector.print()
