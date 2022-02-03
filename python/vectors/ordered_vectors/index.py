@@ -49,8 +49,23 @@ class OrderedVector:
             if i == self.last_position:
                 return -1
 
+    # O(log n)
     def binary_search(self, value):
-        pass
+        lower_limit = 0
+        higher_limit = self.last_position
+
+        while True:
+            position = int((lower_limit + higher_limit) / 2)
+
+            if self.values[position] == value:
+                return position
+            elif lower_limit > higher_limit:
+                return -1
+            else:
+                if self.values[position] < value:
+                    lower_limit = position + 1
+                else:
+                    higher_limit = position - 1
 
     def remove(self, value):
         position = self.search(value)
