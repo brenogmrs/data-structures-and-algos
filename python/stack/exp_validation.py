@@ -49,7 +49,24 @@ exp = str(input('Digite uma expressão: '))
 
 
 def exp_validator(exp):
-    return
+    stack = Stack(len(exp))
+    for i in range(len(exp)):
+        char = exp[i]
+        if char == '{' or char == '[' or char == '(':
+            stack.stack_up(char)
+        elif char == '}' or char == ']' or char == ')':
+            if not stack.empty_stack():
+                charx = str(stack.unstack())
+                if (char == '}' and charx != '{') or (char == ']' and charx != '[') or (char == ')' and charx != '('):
+                    print('Error: ', char, ' na posição', i)
+                    break
+            else:
+                print('Error: ', char, ' na posição', i)
+    if not stack.empty_stack():
+        print('ERROR')
+    else:
+        print(exp, 'is a valid expression')
+    
 
 
 exp_validator(exp)
