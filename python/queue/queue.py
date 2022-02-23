@@ -43,3 +43,29 @@ class Queue:
         if self.__empty_queue():
             return -1
         return self.values[self.beginig]
+
+q = Queue(5)
+
+print(q.first())
+
+q.add(1)
+
+print(q.first())
+q.add(2)
+q.add(3)
+q.add(4)
+q.add(5)
+
+print(q.first())
+
+q.dequeue()
+q.dequeue()
+
+print(q.first())
+
+q.add(6)
+q.add(7)
+
+print(q.values)
+
+print(q.beginig, q.end)
